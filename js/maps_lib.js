@@ -154,8 +154,23 @@ var MapsLib = {
         where:  whereClause
       },
       styleId: 2,
-      templateId: 2
+      templateId: 2,
+      // ensures InfoWindows open
+      suppressInfoWindows:false
     });
+
+    // google.maps.event.addListener(MapsLib.searchrecords, 'click', function(e) {
+    //   // Customize the content of the InfoWindow
+    //   e.infoWindowHtml = "<p>Name: <strong>" + e.row['YOUR_NAME'].value + "</strong></p>"
+    //                    + "<p>Description: <strong>" + e.row['YOUR_DESCRIPTION'].value + "</strong></p>"
+    //                    + "<p>Phone Number: <strong>" + e.row['YOUR_PHONE'].value + "</strong></p>";
+
+    //   // If the row == yes, add content to the bottom on the infowindow
+    //   if (e.row['MARINE'].value == 'Yes') {
+    //     e.infoWindowHtml += "<p>Hoorah!</p>";
+    //   }
+    // });
+
     MapsLib.searchrecords.setMap(map);
     MapsLib.getCount(whereClause);
   },
